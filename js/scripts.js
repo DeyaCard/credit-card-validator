@@ -15,6 +15,7 @@ function creditCardValidator(number) {
     return "This card number in not valid";
   }
 
+  return "This card number is valid."
   }
 }
 
