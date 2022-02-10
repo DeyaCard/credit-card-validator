@@ -12,10 +12,34 @@ function creditCardValidator(purportedCC) {
       return "This card number is not valid";
     }
   }
-  for (let i = purportedCC.length; i >= 0; i--){
-    console.log(purportedCC[i])
+  let doubledArr = [];
+  let singleArr = [];
+  let sum = 0
+  for (let i = purportedCC.length+1; i >= 0; i-=2){
+    if ((purportedCC[i] * 2) > 9) {
+      let digit = (purportedCC[i] * 2) - 9
+      doubledArr.push(digit)
+    }else {
+      doubledArr.push(purportedCC[i] * 2);
+    }
+    
+  }
+  doubledArr.shift()
+
+  for (let i = purportedCC.length; i >= 0; i-=2){
+    singleArr.push(parseInt(purportedCC[i]))
+  }
+  singleArr.shift()
+  console.log(singleArr);
+  console.log(doubledArr);
+  for (let i = 0; i < doubledArr.length; i++){
+    sum += doubledArr[i]
+  }
+  for (let i = 0; i < singleArr.length; i++){
+    sum += singleArr[i]
   }
 }
+
 
 
       //Begin algorhythm

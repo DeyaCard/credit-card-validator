@@ -16,7 +16,11 @@ Test: "If an entry is shorter than 14 numbers, the card will not be valid."
 Code: creditCardValidator(4102080860435)
 Expected Output: "This card number is not valid"
 
-Test: "It will move right to left, doubling every other number.
+Test: "It will process numbers right to left."
+Code: creditCardValidator(1,2,3,4,5)
+Expected Output: 5,4,3,2,1
+
+Test: "It will double every other number moving right to left"
 Code: creditCardValidator(1,2,3,4,5)
 Expected Output: 2,2,6,4,10
 
